@@ -15,13 +15,14 @@ import javafx.stage.Stage;
 
 public class ButtonListenerDemo3 extends Application {
 
-	// These objects must be visible to the inner class
-	TextField tfFirstName = new TextField();
-	TextField tfMI = new TextField();
-	TextField tfLastName = new TextField();
-	Label lbName = new Label();
-
 	public void start(Stage primaryStage) {
+
+		// These objects must be visible to the inner class
+		TextField tfFirstName = new TextField();
+		TextField tfMI = new TextField();
+		TextField tfLastName = new TextField();
+		Label lbName = new Label();
+
 		GridPane pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);
 		pane.setPadding(new Insets(10, 10, 10, 10));
