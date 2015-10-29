@@ -45,7 +45,7 @@ public class ButtonListenerDemo2 extends Application {
 		pane.add(new Label("Last Name:"), 0, 2);
 		pane.add(tfLastName, 1, 2);
 		
-		// Add a button one the right of the next row in the grid
+		// Add a button on the right of the third row in the grid
 		Button btAdd = new Button("Add Name");
 		pane.add(btAdd, 1, 3);
 		GridPane.setHalignment(btAdd, HPos.RIGHT);

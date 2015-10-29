@@ -25,7 +25,6 @@ public class ButtonListenerDemo3 extends Application {
 
 		GridPane pane = new GridPane();
 		pane.setAlignment(Pos.CENTER);
-		pane.setPadding(new Insets(10, 10, 10, 10));
 		
 		// Set horizontal and vertical gaps between elements
 		pane.setHgap(5);
@@ -43,10 +42,10 @@ public class ButtonListenerDemo3 extends Application {
 		pane.add(new Label("Last Name:"), 0, 2);
 		pane.add(tfLastName, 1, 2);
 		
-		// Add a button one the right of the next row in the grid
-		Button btAdd = new Button("Add Name");
-		pane.add(btAdd, 1, 3);
-		GridPane.setHalignment(btAdd, HPos.RIGHT);
+		// Add a button centered in the middle of the third row
+		Button btAdd = new Button("Add Full Name");
+		pane.add(btAdd, 0, 3, 2, 1);
+		GridPane.setHalignment(btAdd, HPos.CENTER);
 
 		// Create a handler for the button using a lambda expression
 		btAdd.setOnAction((e) -> {
@@ -58,8 +57,9 @@ public class ButtonListenerDemo3 extends Application {
 				lbName.setText("Added: " + name);
 		});
 
-		// Add the name label field at the bottom
-		pane.add(lbName, 0, 4);
+		// Add the name label field at the bottom,
+		// spanning two columns
+		pane.add(lbName, 0, 4, 2, 1);
 
 		// Put the pane in the scene
 		Scene scene = new Scene(pane, 400, 200);
