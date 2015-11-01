@@ -4,7 +4,6 @@ package p3;
  
 import javafx.application.Application;
 import javafx.geometry.HPos;
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -43,6 +42,7 @@ public class ButtonListenerDemo3 extends Application {
 		pane.add(tfLastName, 1, 2);
 		
 		// Add a button centered in the middle of the third row
+		// by spanning two columns
 		Button btAdd = new Button("Add Full Name");
 		pane.add(btAdd, 0, 3, 2, 1);
 		GridPane.setHalignment(btAdd, HPos.CENTER);
