@@ -8,3 +8,5 @@ Show different ways to implement JavaFX listeners
  src/p3 - defining a button handler using a lambda expression
 
  src/p4 - building and creating handlers for check boxes and radio buttons
+
+ src/p5 - defining an array of buttons and a common handler
