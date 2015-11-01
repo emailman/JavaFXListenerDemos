@@ -1,5 +1,5 @@
 # JavaFXListenerDemos
-Show different ways to implement a button listener
+Show different ways to implement JavaFX listeners
 
  src/p1 - defining a button handler as an inner class
 
