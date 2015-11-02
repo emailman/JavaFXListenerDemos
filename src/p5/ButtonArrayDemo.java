@@ -22,10 +22,10 @@ public class ButtonArrayDemo extends Application{
     @Override
     public void start(Stage primaryStage) {
         // Get the pane for the scene
-        primaryStage.setScene(new Scene(getPane(), 60, 400));
+        primaryStage.setScene(new Scene(getPane(), 180, 600));
 
         // Setup the stage
-        primaryStage.setTitle("Button Array Demo");
+        primaryStage.setTitle("Elevator Buttons");
         primaryStage.setResizable(false);
         primaryStage.show();
     }
@@ -38,7 +38,10 @@ public class ButtonArrayDemo extends Application{
 
             // Set the button number as text for the button
             buttonsArray[i] = new Button(Integer.toString(i + 1));
-            buttonsArray[i].setMinWidth(50);
+
+            // Set preferred width and style with a light gray background
+            buttonsArray[i].setPrefWidth(100);
+            buttonsArray[i].setStyle("-fx-font: 22 arial; -fx-base: LightGray");
 
             // Add the button to the pane and set the handler
             pane.getChildren().add(buttonsArray[i]);
@@ -49,10 +52,13 @@ public class ButtonArrayDemo extends Application{
 
     // Build an event handler for the buttons
     EventHandler<ActionEvent> ButtonHandler = e -> {
+        // Identify the object that caused the event
         Button b = (Button)e.getSource();
 
+        // Read the text field of the object and convert it to an integer
         int i = Integer.parseInt(b.getText());
-        System.out.println(i);
 
+        // Check the background of the button to a dark red
+        buttonsArray[i-1].setStyle("-fx-font: 22 arial; -fx-base: DarkRed");
     };
 }
