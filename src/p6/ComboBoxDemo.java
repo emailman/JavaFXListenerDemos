@@ -4,10 +4,10 @@ package p6;
  * Created by emailman on 11/5/2015.
  */
 
-import javax.swing.JOptionPane;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.layout.HBox;
@@ -68,24 +68,33 @@ public class ComboBoxDemo extends Application {
         HBox pane2 = new HBox(10);
         pane2.setAlignment(Pos.CENTER);
 
+        // Create an error alert
+        Alert cancel = new Alert(Alert.AlertType.ERROR);
+        cancel.setTitle("Order Alert");
+        cancel.setHeaderText(null);
+        cancel.setContentText("Your order has been cancelled");
+
+        // Create an order recap alert
+        Alert confirm = new Alert(Alert.AlertType.INFORMATION);
+        confirm.setTitle("Order Recap");
+        confirm.setHeaderText(null);
+
         // Create two buttons and listeners
         Button btOrder = new Button("ORDER");
         btOrder.setPrefWidth(70);
         btOrder.setOnAction(e -> {
-            JOptionPane.showMessageDialog
-                    (null, "Ordering:" +
-                                    "\n\tStyle - " + cbStyle.getSelectionModel().getSelectedItem() +
-                                    "\n\tWaist - " + cbWaist.getSelectionModel().getSelectedItem() +
-                                    "\n\tLength - " + cbLength.getSelectionModel().getSelectedItem(),
-                            "Snappy Jeans Order Confirmation", JOptionPane.INFORMATION_MESSAGE);
+            confirm.setContentText("Ordering:" +
+                                    "\n\tStyle:\t\t" + cbStyle.getSelectionModel().getSelectedItem() +
+                                    "\n\tWaist:\t" + cbWaist.getSelectionModel().getSelectedItem() +
+                                    "\n\tLength:\t" + cbLength.getSelectionModel().getSelectedItem());
+            confirm.showAndWait();
             ClearSelections();
         });
 
         Button btCancel = new Button("CANCEL");
         btCancel.setPrefWidth(70);
         btCancel.setOnAction(e -> {
-            JOptionPane.showMessageDialog(null, "Order Cancelled",
-                    "Snappy Jeans Cancel Confirmation", JOptionPane.ERROR_MESSAGE);
+            cancel.showAndWait();
             ClearSelections();
         });
 
