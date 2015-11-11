@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
  /*
-  * Created by Eric Mailman on 3/30/15 for CSC164
+  * Created by Eric Mailman on 11/9/15
   */
 
 public class TimerDemo  extends Application {
@@ -37,12 +37,12 @@ public class TimerDemo  extends Application {
         circle[1] = new Circle();
         circle[1].setRadius(50);
         circle[1].setStroke(Color.BLACK);
-        circle[1].setFill(Color.DARKRED.darker().darker());
+        circle[1].setFill(Color.DARKRED.darker());
 
         // Create an HBox pane for the circles
         HBox pane = new HBox(20);
         pane.setStyle("-fx-background-color: grey");
-        pane.setPadding(new Insets(20,20,20,20));
+        pane.setPadding(new Insets(20));
         pane.getChildren().addAll(circle[0], circle[1]);
 
         // Create a scene and put in on the stage
@@ -54,12 +54,12 @@ public class TimerDemo  extends Application {
         // Create a handler to toggle the lights
         EventHandler<ActionEvent> eventHandler = e -> {
             if (circle[0].getFill() == Color.RED) {
-                circle[0].setFill(Color.DARKRED.darker().darker());
+                circle[0].setFill(Color.DARKRED.darker());
                 circle[1].setFill(Color.RED);
             }
             else {
                 circle[0].setFill(Color.RED);
-                circle[1].setFill(Color.DARKRED.darker().darker());
+                circle[1].setFill(Color.DARKRED.darker());
             }
         };
 

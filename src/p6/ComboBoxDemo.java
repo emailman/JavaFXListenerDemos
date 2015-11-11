@@ -84,7 +84,7 @@ public class ComboBoxDemo extends Application {
         btOrder.setPrefWidth(70);
         btOrder.setOnAction(e -> {
             confirm.setContentText("Ordering:" +
-                                    "\n\tStyle:\t\t" + cbStyle.getSelectionModel().getSelectedItem() +
+                                    "\n\tStyle:\t" + cbStyle.getSelectionModel().getSelectedItem() +
                                     "\n\tWaist:\t" + cbWaist.getSelectionModel().getSelectedItem() +
                                     "\n\tLength:\t" + cbLength.getSelectionModel().getSelectedItem());
             confirm.showAndWait();
